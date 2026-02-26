@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { View, TextInput, FlatList, StyleSheet, Text } from 'react-native';
-import { useSelectedCountries } from './components/api/SelectedCountriesContext';
+import { useSelectedCountries } from '../contexts/SelectedCountriesContext';
 import CountryButton from './components/countrybutton';
 
 
