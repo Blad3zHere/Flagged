@@ -2,13 +2,12 @@
   "expo": {
     "name": "Flagged",
     "slug": "flagged",
-    "version": "1.0.0",
-    "sdkVersion": "51.0.0",
+    "version": "1.0.1",
     "icon": "./assets/images/app_icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#000"
+      "backgroundColor": "#000000"
     },
     "platforms": [
       "ios",
@@ -65,13 +64,14 @@
         "expo-build-properties",
         {
           "android": {
-            "compileSdkVersion": 34,
-            "targetSdkVersion": 34,
-            "buildToolsVersion": "34.0.0"
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0"
           }
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      "expo-router"
     ],
     "android": {
       "package": "com.minimal_apps.flagged",
