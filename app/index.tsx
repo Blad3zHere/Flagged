@@ -7,8 +7,8 @@ import * as SplashScreen from 'expo-splash-screen';
 //import * as FileSystem from 'expo-file-system'; // For debugging
 import MapComponent from './components/map';
 import ProgressBar from './components/progressbar';
-import { useSelectedCountries } from './components/api/SelectedCountriesContext';
-import { useTerms } from './components/api/TermsContext';
+import { useSelectedCountries } from '../contexts/SelectedCountriesContext';
+import { useTerms } from '../contexts/TermsContext';
 import TermsOfService from './components/TermsOfService';
 import Onboarding from './components/onboarding';
 import { initMapbox } from '../mapboxConfig';
