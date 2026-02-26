@@ -2,7 +2,7 @@
   "expo": {
     "name": "Flagged",
     "slug": "flagged",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "icon": "./assets/images/app_icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
