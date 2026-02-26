@@ -2,7 +2,7 @@
 
 import { View, StyleSheet } from 'react-native';
 import { MapView, Camera, VectorSource, FillLayer } from '@rnmapbox/maps';
-import { useSelectedCountries } from './api/SelectedCountriesContext';
+import { useSelectedCountries } from '../../contexts/SelectedCountriesContext';
 import '@/mapboxConfig';
 
 const MapComponent = () => {
