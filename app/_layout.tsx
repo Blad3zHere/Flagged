@@ -2,8 +2,8 @@
 
 import { View, StyleSheet, TouchableOpacity, Text, Image, Dimensions } from "react-native";
 import { Stack, Link } from "expo-router";
-import { SelectedCountriesProvider, useSelectedCountries } from "./components/api/SelectedCountriesContext";
-import { TermsProvider, useTerms } from "./components/api/TermsContext";
+import { SelectedCountriesProvider, useSelectedCountries } from "../contexts/SelectedCountriesContext";
+import { TermsProvider, useTerms } from "../contexts/TermsContext";
 import { Ionicons } from "@expo/vector-icons";
 
 const { width } = Dimensions.get('window');
