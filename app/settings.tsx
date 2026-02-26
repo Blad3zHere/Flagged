@@ -44,7 +44,7 @@ export default function Settings() {
           </View>
           <View style={styles.txtContainer}>
             <Text style={styles.txtAppVersionTitle}>App Version:</Text>
-            <Text style={styles.txtAppVersion}>1.0.1</Text>
+            <Text style={styles.txtAppVersion}>1.0.2</Text>
           </View>
           <TouchableOpacity style={styles.listButton}>
             <Text style={styles.buttonText}>About the app</Text>
