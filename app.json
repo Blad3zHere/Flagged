@@ -4,11 +4,6 @@
     "slug": "flagged",
     "version": "1.0.2",
     "icon": "./assets/images/app_icon.png",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#000000"
-    },
     "platforms": [
       "ios",
       "android"
@@ -20,7 +15,7 @@
         "@rnmapbox/maps",
         {
           "RNMapboxMapsImpl": "mapbox",
-          "RNMapboxMapsVersion": "11.8.0"
+          "RNMapboxMapsVersion": "11.16.2"
         }
       ],
       [
@@ -67,6 +62,18 @@
             "compileSdkVersion": 35,
             "targetSdkVersion": 35,
             "buildToolsVersion": "35.0.0"
+          }
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#000000",
+          "image": "./assets/images/splash.png",
+          "resizeMode": "cover",
+          "imageWidth": 288,
+          "android": {
+            "resizeMode": "cover"
           }
         }
       ],
