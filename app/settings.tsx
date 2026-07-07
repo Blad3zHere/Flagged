@@ -88,7 +88,7 @@ export default function Settings() {
             </TouchableOpacity>
           </Link>
         </View>
-        <Text style={styles.copyrightText}>© 2025 Flagged.</Text>
+        <Text style={styles.copyrightText}>© 2026 Flagged.</Text>
       </ScrollView>
     </View>
   );
