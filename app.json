@@ -4,10 +4,7 @@
     "slug": "flagged",
     "version": "1.0.2",
     "icon": "./assets/images/app_icon.png",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "scheme": "flagged",
     "orientation": "portrait",
     "plugins": [
