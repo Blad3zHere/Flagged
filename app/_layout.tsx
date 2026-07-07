@@ -1,12 +1,22 @@
 // app/_layout.tsx
 
-import { View, StyleSheet, TouchableOpacity, Text, Image, Dimensions } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Image,
+  Dimensions,
+} from "react-native";
 import { Stack, Link } from "expo-router";
-import { SelectedCountriesProvider, useSelectedCountries } from "../contexts/SelectedCountriesContext";
+import {
+  SelectedCountriesProvider,
+  useSelectedCountries,
+} from "../contexts/SelectedCountriesContext";
 import { TermsProvider, useTerms } from "../contexts/TermsContext";
 import { Ionicons } from "@expo/vector-icons";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 // Save button for the countrylist screen
 function HeaderSaveButton() {
@@ -14,7 +24,7 @@ function HeaderSaveButton() {
 
   const handleSave = async () => {
     await saveSelectedCountries();
-    alert('Selections saved!');
+    alert("Selections saved!");
   };
 
   return (
@@ -25,89 +35,93 @@ function HeaderSaveButton() {
 }
 
 function RootLayout() {
-  const { termsAccepted } = useTerms();
+  const { termsAccepted, loading } = useTerms();
+
+  if (loading) {
+    return null;
+  }
 
   return (
-      <SelectedCountriesProvider>
-        <Stack>
-          <Stack.Screen 
-            name="index" 
-            options={{
-              headerShown: termsAccepted, // Show the header if the terms have been accepted
-              headerTitle: () => (
-                <Image
-                  source={require('@/assets/images/logo_black.png')}
-                  style={styles.logo}
-                  resizeMode="contain"
-                />
-              ),
-              headerTitleStyle: {
-                fontFamily: 'BonaNova-Bold',
-                fontSize: 24,
-              },
-              headerRight: () => (
-                <View style={styles.navbar}>
-                  <Link style={styles.navLink} href="/settings">
-                    <View style={styles.iconWrapper}>
-                      <Ionicons name="settings-outline" size={24} color="black" />
-                    </View>
-                  </Link>
-                  <Link style={styles.navLink} href="/countrylist">
-                    <View style={styles.iconWrapper}>
-                      <Ionicons name="add-outline" size={24} color="black" />
-                    </View>
-                  </Link>
-                </View>
-              ),
-            }} 
-          />
-          <Stack.Screen 
-            name="settings" 
-            options={{
-              title: 'Settings',
-              headerTitleAlign: 'center',
-              headerTitleStyle: {
-                fontFamily: 'BonaNova-Bold',
-                fontSize: 24,
-              },
-              }}
-          />
-          <Stack.Screen
-            name="countrylist"
-            options={{
-              title: 'Country List',
-              headerTitleAlign: 'center',
-              headerTitleStyle: {
-                fontFamily: 'BonaNova-Bold',
-                fontSize: 24,
-              },
-              headerRight: () => <HeaderSaveButton />,
-            }}
-          />
-          <Stack.Screen 
-            name="reportbugs" 
-            options={{
-              title: 'Report Bugs',
-              headerTitleAlign: 'center',
-              headerTitleStyle: {
-                fontFamily: 'BonaNova-Bold',
-                fontSize: 24,
-              },
-              }}
-          />
-          <Stack.Screen 
-            name="contactus" 
-            options={{
-              title: 'Contact Us',
-              headerTitleAlign: 'center',
-              headerTitleStyle: {
-                fontFamily: 'BonaNova-Bold',
-                fontSize: 24,
-              },
-              }}
-          />
-        </Stack>
-      </SelectedCountriesProvider>
+    <SelectedCountriesProvider>
+      <Stack>
+        <Stack.Screen
+          name="index"
+          options={{
+            headerShown: termsAccepted, // Show the header if the terms have been accepted
+            headerTitle: () => (
+              <Image
+                source={require("@/assets/images/logo_black.png")}
+                style={styles.logo}
+                resizeMode="contain"
+              />
+            ),
+            headerTitleStyle: {
+              fontFamily: "BonaNova-Bold",
+              fontSize: 24,
+            },
+            headerRight: () => (
+              <View style={styles.navbar}>
+                <Link style={styles.navLink} href="/settings">
+                  <View style={styles.iconWrapper}>
+                    <Ionicons name="settings-outline" size={24} color="black" />
+                  </View>
+                </Link>
+                <Link style={styles.navLink} href="/countrylist">
+                  <View style={styles.iconWrapper}>
+                    <Ionicons name="add-outline" size={24} color="black" />
+                  </View>
+                </Link>
+              </View>
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="settings"
+          options={{
+            title: "Settings",
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              fontFamily: "BonaNova-Bold",
+              fontSize: 24,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="countrylist"
+          options={{
+            title: "Country List",
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              fontFamily: "BonaNova-Bold",
+              fontSize: 24,
+            },
+            headerRight: () => <HeaderSaveButton />,
+          }}
+        />
+        <Stack.Screen
+          name="reportbugs"
+          options={{
+            title: "Report Bugs",
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              fontFamily: "BonaNova-Bold",
+              fontSize: 24,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="contactus"
+          options={{
+            title: "Contact Us",
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              fontFamily: "BonaNova-Bold",
+              fontSize: 24,
+            },
+          }}
+        />
+      </Stack>
+    </SelectedCountriesProvider>
   );
 }
 
@@ -144,13 +158,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   saveButton: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     padding: 10,
     borderRadius: 5,
   },
   saveButtonText: {
-    color: '#000000',
+    color: "#000000",
     fontSize: 18,
-    fontFamily: 'SourceSans3-Bold',
+    fontFamily: "SourceSans3-Bold",
   },
 });
