@@ -7,6 +7,7 @@ import {
   Text,
   Image,
   Dimensions,
+  StatusBar,
 } from "react-native";
 import { Stack, Link } from "expo-router";
 import {
@@ -43,6 +44,7 @@ function RootLayout() {
 
   return (
     <SelectedCountriesProvider>
+      <StatusBar barStyle="dark-content" />
       <Stack>
         <Stack.Screen
           name="index"
